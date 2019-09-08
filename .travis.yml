@@ -2,7 +2,7 @@ language: php
 php:
   - '7.3'
 install:
-  - composer install --no-dev -o
+  - composer install
 script:
   - php bin/phpunit
 deploy:
