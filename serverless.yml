@@ -24,6 +24,7 @@ package:
     - composer.lock
     - symfony.lock
     - public/**
+    - config/bootstrap.php
 
 functions:
     api:
