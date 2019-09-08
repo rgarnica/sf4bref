@@ -1,0 +1,43 @@
+service: sf4bref
+
+provider:
+    name: aws
+    region: us-east-1
+    runtime: provided
+    environment:
+      APP_ENV: prod
+      #Don't put sensitive values here!
+
+plugins:
+    - ./vendor/bref/bref
+
+package:
+  exclude:
+    - ./**
+  include:
+    - bin/console
+    - bin/phpunit
+    - vendor/**
+    - var/cache/prod/**
+    - src/**
+    - composer.json
+    - composer.lock
+    - symfony.lock
+    - public/**
+
+functions:
+    api:
+        handler: public/index.php
+        description: ''
+        timeout: 28 # in seconds (API Gateway has a timeout of 29 seconds)
+        layers:
+            - ${bref:layer.php-73-fpm}
+        events:
+            -   http: 'ANY /'
+            -   http: 'ANY /{proxy+}'
+    console:
+        handler: bin/console
+        timeout: 120 # in seconds
+        layers:
+            - ${bref:layer.php-73} # PHP
+            - ${bref:layer.console} # The "console layer"

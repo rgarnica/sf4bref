@@ -1,0 +1,15 @@
+language: php
+php:
+  - '7.3'
+install:
+  - composer install
+script:
+  - php bin/phpunit
+before_deploy:
+  - rm -rf bin/.phpunit
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: bash deploy.sh
+  on:
+    branch: master
