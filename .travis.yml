@@ -2,15 +2,12 @@ language: php
 php:
   - '7.3'
 install:
-  - composer install
+  - composer install --no-dev -o
 script:
   - php bin/phpunit
 deploy:
   -
     provider: script
-    script:
-      - composer install --no-dev -o
-      - php bin/console cache:warmup
-      - serverless deploy
+    script: deploy.sh
     on:
-      - branch: master
+      branch: master
