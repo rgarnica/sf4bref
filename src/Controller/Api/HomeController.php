@@ -6,7 +6,13 @@ namespace App\Controller\Api;
 
 
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class HomeController
+ * @package App\Controller\Api
+ * @Route("/")
+ */
 class HomeController
 {
     public function __invoke()
