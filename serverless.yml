@@ -25,6 +25,7 @@ package:
     - symfony.lock
     - public/**
     - config/bootstrap.php
+    - .env.local.php
 
 functions:
     api:
