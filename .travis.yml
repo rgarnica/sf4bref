@@ -1,8 +1,16 @@
 language: php
 php:
   - '7.3'
-  - nightly
 install:
   - composer install
 script:
   - php bin/phpunit
+deploy:
+  -
+    provider: script
+    script:
+      - composer install --no-dev -o
+      - php bin/console cache:warmup
+      - serverless deploy
+    on:
+      - branch: master

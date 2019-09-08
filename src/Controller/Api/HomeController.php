@@ -12,7 +12,7 @@ class HomeController
     public function __invoke()
     {
         return new JsonResponse([
-            'message' => 'Raphael',
+            'message' => 'API build was successful',
         ]);
     }
 }
