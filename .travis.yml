@@ -1,4 +1,8 @@
 language: php
+cache:
+  directories:
+    - $HOME/.npm
+    - $HOME/.composer/cache/files
 php:
   - '7.3'
 install:
