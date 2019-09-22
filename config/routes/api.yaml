@@ -1,3 +1,0 @@
-api_index:
-  path: /
-  controller: App\Controller\Api\HomeController
