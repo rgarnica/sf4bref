@@ -36,8 +36,7 @@ functions:
         layers:
             - ${bref:layer.php-73-fpm}
         events:
-            -   http: 'ANY /'
-            -   http: 'ANY /{proxy+}'
+            -   http: 'POST /api/v1/notification/send'
     console:
         handler: bin/console
         timeout: 120 # in seconds

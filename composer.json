@@ -1,4 +1,6 @@
 {
+    "name": "rgarnica/sf4bref",
+    "description": "The project is a part of my undergraduate thesis, where I make some analysis on the serverless benefits.\n",
     "type": "project",
     "license": "proprietary",
     "require": {
@@ -11,9 +13,12 @@
         "symfony/dotenv": "4.3.*",
         "symfony/flex": "^1.3.1",
         "symfony/framework-bundle": "4.3.*",
+        "symfony/serializer": "4.3.*",
+        "symfony/validator": "4.3.*",
         "symfony/yaml": "4.3.*"
     },
     "require-dev": {
+        "nunomaduro/phpinsights": "^1.9",
         "symfony/browser-kit": "4.3.*",
         "symfony/phpunit-bridge": "^4.3"
     },
@@ -44,7 +49,8 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "security-checker security:check": "script"
         },
         "post-install-cmd": [
             "@auto-scripts"
