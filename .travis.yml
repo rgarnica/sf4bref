@@ -3,6 +3,9 @@ cache:
   directories:
     - $HOME/.npm
     - $HOME/.composer/cache/files
+branches:
+  only:
+    - master
 php:
   - '7.3'
 install:
