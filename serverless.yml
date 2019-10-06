@@ -4,6 +4,8 @@ provider:
     name: aws
     region: us-east-1
     runtime: provided
+    apiKeys:
+      - apiKey
     environment:
       APP_ENV: prod
       #Don't put sensitive values here!
@@ -36,8 +38,13 @@ functions:
         layers:
             - ${bref:layer.php-73-fpm}
         events:
-            -   http: 'ANY /'
-            -   http: 'ANY /{proxy+}'
+            - http:
+                path: /api/v1/notification/send
+                method: post
+                private: true
+                request:
+                  schema:
+                    application/json: ${file(send_notification.json)}
     console:
         handler: bin/console
         timeout: 120 # in seconds

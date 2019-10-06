@@ -1,3 +1,4 @@
 api:
-  resource: 'routes/api.yaml'
+  resource: '../src/Controller/Api'
+  type: annotation
   prefix: api/v1
