@@ -1,0 +1,21 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Request Schema",
+  "required": ["template", "email"],
+  "properties": {
+    "template": {
+      "type": "string",
+      "title": "Template Schema",
+      "default": "",
+      "pattern": "^[a-zA-Z-]+$"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email Schema",
+      "default": "",
+      "format": "email"
+    }
+  }
+}
