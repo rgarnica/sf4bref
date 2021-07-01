@@ -1,4 +1,7 @@
 language: php
+before_install:
+  - wget https://get.symfony.com/cli/installer -O - | bash
+  - sudo mv /home/travis/.symfony/bin/symfony /usr/local/bin/symfony
 cache:
   directories:
     - $HOME/.npm
@@ -12,6 +15,7 @@ install:
   - composer install
 script:
   - php bin/phpunit
+  - symfony check:security
 before_deploy:
   - rm -rf bin/.phpunit
 deploy:
