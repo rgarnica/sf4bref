@@ -19,7 +19,7 @@
         "symfony/yaml": "*"
     },
     "require-dev": {
-        "nunomaduro/phpinsights": "^1.9",
+        "nunomaduro/phpinsights": "^2.0",
         "symfony/browser-kit": "*",
         "symfony/phpunit-bridge": "*"
     },
