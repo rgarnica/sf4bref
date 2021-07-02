@@ -28,7 +28,7 @@ class ConvertJsonBodyListener implements EventSubscriberInterface
      */
     public function convertJsonBodyToArrayParameters(ControllerEvent $event)
     {
-        if (!$event->isMasterRequest()) {
+        if (!$event->isMainRequest()) {
             return;
         }
 
