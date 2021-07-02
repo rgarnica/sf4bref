@@ -3,7 +3,7 @@ service: sf4bref
 provider:
     name: aws
     region: us-east-1
-    runtime: provided
+    runtime: provided.al2
     apiKeys:
       - apiKey
     environment:
