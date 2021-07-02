@@ -1,5 +1,6 @@
 language: php
 before_install:
+  - nvm install node
   - wget https://get.symfony.com/cli/installer -O - | bash
   - sudo mv /home/travis/.symfony/bin/symfony /usr/local/bin/symfony
 cache:
@@ -9,8 +10,6 @@ cache:
 branches:
   only:
     - master
-node_js:
-  - '10'
 php:
   - '7.4'
 install:
