@@ -24,4 +24,5 @@ deploy:
   skip_cleanup: true
   script: bash deploy.sh
   on:
-    branch: master
+    all_branches: true
+    codition: ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH} =~ ^release_.*$
